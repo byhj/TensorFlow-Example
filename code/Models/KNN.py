@@ -23,7 +23,7 @@ with tf.Session() as sess:
     for i in range(len(Xtest)):
         # get the nearest neighbor for most class label
         nn_index = sess.run(pred, feed_dict={xtr:Xtrain, xte:Xtest[i, :]})
-        print ("Test " ,i, "Prediction:", np.argmax(Ytrain[nn_index]), "True Class:", np.argmax(Ytest[i]))
+        print ("Test ", i, "Prediction:", np.argmax(Ytrain[nn_index]), "True Class:", np.argmax(Ytest[i]))
         #calc the arccuracy
         if np.argmax(Ytrain[nn_index]) == np.argmax(Ytest[i]):
             accuracy += 1./len(Xtest)

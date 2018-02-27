@@ -6,8 +6,9 @@ from tensorflow.contrib.factorization import KMeans
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
+#Input the mnist data
 import input_data
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+mnist = input_data.read_data_sets("../../data/mnist", one_hot=True)
 full_data_x = mnist.train.images
 
 num_steps = 50
